@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris_claro"
+    tools:context=".VistaNavegacion">
+
+    <ImageButton
+        android:id="@+id/ibtnCerrarSesion"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/logout"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llLibros"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/llNavegacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/etLibroBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="45dp"
+            android:hint=" Bucar por isbn, nombre del libro" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLibros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMisPrestamos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/llNavegacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardMaxElevation="10dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvFechaActual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="Fecha Actual"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:text="INFORMACIÓN PRESTAMO"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@color/morado_oscuro" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:text="INFORMACIÓN LIBRO"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@color/gris_oscuro" />
+
+                <TextView
+                    android:id="@+id/tvISBN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ISBN"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:id="@+id/tvNomLibro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NOMBRE LIBRO"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:id="@+id/tvNomAutor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NOMBRE AUTOR"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:id="@+id/tvEditorial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="EDITORIAL"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:id="@+id/tvAnioPublicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="AÑO DE PUBLICACIÓN"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:id="@+id/tvEdicion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="EDICIÓN"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/gris_oscuro"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="FECHAS"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvFechaPrestamo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="FECHA PRESTAMO"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:id="@+id/tvFechaDevolucion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="FECHA DEVOLUCION"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/rojo_oscuro"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="NOTAS"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NOTA"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="5dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--<TextView
+            android:id="@+id/tvFechaActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:hint="Fecha Actual"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="20dp"
+            android:gravity="center"
+            android:text="INFORMACIÓN PRESTAMO"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@color/morado_oscuro" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="INFORMACIÓN LIBRO"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@color/gris_oscuro" />
+
+        <TextView
+            android:id="@+id/tvISBN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ISBN"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:id="@+id/tvNomLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NOMBRE LIBRO"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:id="@+id/tvNomAutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NOMBRE AUTOR"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:id="@+id/tvEditorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="EDITORIAL"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:id="@+id/tvAnioPublicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="AÑO DE PUBLICACIÓN"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:id="@+id/tvEdicion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="EDICIÓN"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/gris_oscuro"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="FECHAS"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFechaPrestamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="FECHA PRESTAMO"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:id="@+id/tvFechaDevolucion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="FECHA DEVOLUCION"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/rojo_oscuro"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="NOTAS"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NOTA"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="5dp" />-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llNavegacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvLibros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:background="@color/morado_oscuro"
+            android:gravity="center"
+            android:text="LIBROS"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tvMisPrestamos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:background="@color/morado_oscuro"
+            android:gravity="center"
+            android:text="MIS PRESTAMOS"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

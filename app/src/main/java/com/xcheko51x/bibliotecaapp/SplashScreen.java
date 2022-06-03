@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 
 public class SplashScreen extends AppCompatActivity {
 
-    int DURACION_PANTALLA = 1000;
+    int DURACION_PANTALLA = 4000;
     ImageView ivSplashScreen;
 
     @Override

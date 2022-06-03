@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BibliotecaApp</string>
+
+    <string name="url_api">http://192.168.100.17/biblioteca/api.php</string>
+    <string name="url_icon_menu">http://192.168.100.17/biblioteca/img/icon_menu/</string>
+    <string name="url_portadas">http://192.168.100.17/biblioteca/img/portadas_libros/</string>
+
 </resources>
